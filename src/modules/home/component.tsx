@@ -114,7 +114,7 @@ class Home extends React.Component<any, {}> {
                   placeholder="Your email"
                   aria-describedby="basic-addon2"
                 />
-                <button onClick={ this.sendEmail } type="button" className="btn btn-primary btn-lg btn-block">Remind me when goes SwapNow live!*</button>
+                <button onClick={ this.sendEmail } type="button" className="btn btn-primary btn-lg btn-block">Remind me when SwapNow goes live!*</button>
                 <h5>*Get a chance to win a $25 Amazon gift card!<br/>Winner will be randomly selected and notified from email pool.</h5>
               </div>
             </form>
