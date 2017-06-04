@@ -119,7 +119,7 @@ class Home extends React.Component<any, {}> {
               </div>
             </form>
             <div id='thank-you'>
-              <h3>Thank you!<br/>Once we go live-we'll shoot you an email!</h3>
+              <h3>Thank you!<br/>Once we go live, we'll shoot you an email!</h3>
             </div>
             <br/><br/><br/>
           </div>
