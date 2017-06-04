@@ -17,7 +17,6 @@ class App extends React.Component<Props, State> {
   public render() {
     return (
       <div className='home'>
-        <NavBar />
           {this.props.children}
         <Footer />
       </div>

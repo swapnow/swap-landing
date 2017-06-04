@@ -272,3 +272,15 @@ h1{
     font-size: 12px;
   }
 }
+
+.p-b-md {
+  padding-bottom: 0px !important;
+}
+
+.m-b-lg {
+  margin-bottom: 50px !important;
+}
+
+h1.text-uppercase {
+  padding-top: 25px;
+}

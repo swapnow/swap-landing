@@ -7,6 +7,8 @@ interface Props {
 class Home extends React.Component<any, {}> {
   constructor(props) {
     super(props);
+
+    this.sendEmail = this.sendEmail.bind(this);
   }
 
   public componentDidMount() {
@@ -18,16 +20,26 @@ class Home extends React.Component<any, {}> {
   public sendEmail(e) {
     e.preventDefault();
     const email = $('#email').val();
-    $.ajax({
-      method: "POST",
-      url: "/api/emails",
-      data: { email }
-    })
-    .then(() => console.log("OK"))
-    .fail(() => console.log("Fail"))
+    if (this.isEmailAddress(email)) {
+      $.ajax({
+        method: "POST",
+        url: "/api/emails",
+        data: { email }
+      })
+      .then(() => console.log("OK"))
+      .fail(() => console.log("Fail"))
 
-    $('#email-input').hide();
-    $('#thank-you').show();
+      $('#email-input').hide();
+      $('#thank-you').show();
+    } else {
+      $('#email-input').addClass("has-error");
+      setTimeout(() => $('#email-input').removeClass("has-error"), 1500);
+    }
+  }
+
+  private isEmailAddress(str) {
+    let pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.edu)+$/;
+    return pattern.test(str);
   }
 
   public initializeCountDown() {
@@ -103,19 +115,26 @@ class Home extends React.Component<any, {}> {
         <div className="block app-block-intro">
           <div className="container text-center">
             <h1 className="block-title m-b-sm text-uppercase app-myphone-brand">Swap</h1>
-            <p className="lead m-b-lg p-b-md">Best marketplace. For students, exclusively.</p>
+            <p className="lead m-b-lg p-b-md">
+              The best marketplace exclusively for Berkeley students.
+              <br/>Find housing, furniture, textbooks, and more.
+            </p>
              {this.clock()}
             <br/><br/><br/><br/><br/>
-            <form onSubmit={ this.sendEmail }>
+            <form id="email-input-form" onSubmit={ this.sendEmail }>
               <div id='email-input' className="form-group input-group">
                 <input id='email'
                   type="text"
                   className="form-control"
-                  placeholder="Your email"
+                  placeholder="Your Berkeley Edu Email"
                   aria-describedby="basic-addon2"
                 />
                 <button onClick={ this.sendEmail } type="button" className="btn btn-primary btn-lg btn-block">Remind me when SwapNow goes live!*</button>
-                <h5>*Get a chance to win a $25 Amazon gift card!<br/>Winner will be randomly selected and notified from email pool.</h5>
+                <h5>
+                  *Get a chance to win a $25 Amazon gift card!
+                  <br/>Winner will be randomly selected and notified from email pool.
+                  <br/>Your e-mail address will solely be used to provide timely information about SwapNow
+                </h5>
               </div>
             </form>
             <div id='thank-you'>
