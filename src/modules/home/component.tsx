@@ -18,7 +18,14 @@ class Home extends React.Component<any, {}> {
   public sendEmail(e) {
     e.preventDefault();
     const email = $('#email').val();
-    console.log(email);
+    $.ajax({
+      method: "POST",
+      url: "/api/emails",
+      data: { email }
+    })
+    .then(() => console.log("OK"))
+    .fail(() => console.log("Fail"))
+    
     $('#email-input').hide();
     $('#thank-you').show();
   }
