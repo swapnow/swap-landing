@@ -25,7 +25,7 @@ class Home extends React.Component<any, {}> {
     })
     .then(() => console.log("OK"))
     .fail(() => console.log("Fail"))
-    
+
     $('#email-input').hide();
     $('#thank-you').show();
   }
@@ -114,11 +114,12 @@ class Home extends React.Component<any, {}> {
                   placeholder="Your email"
                   aria-describedby="basic-addon2"
                 />
-                <button onClick={ this.sendEmail } type="button" className="btn btn-primary btn-lg btn-block">Remind me when goes SwapNow live!</button>
+                <button onClick={ this.sendEmail } type="button" className="btn btn-primary btn-lg btn-block">Remind me when goes SwapNow live!*</button>
+                <h5>*Get a chance to win a $25 Amazon gift card!<br/>Winner will be randomly selected and notified from email pool.</h5>
               </div>
             </form>
             <div id='thank-you'>
-              <h3>Thank you! Once we go live-we'll shoot you an email!</h3>
+              <h3>Thank you!<br/>Once we go live-we'll shoot you an email!</h3>
             </div>
             <br/><br/><br/>
           </div>
