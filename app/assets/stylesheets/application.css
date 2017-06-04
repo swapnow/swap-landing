@@ -284,3 +284,13 @@ h1{
 h1.text-uppercase {
   padding-top: 25px;
 }
+
+body {
+  background-image: url(http://res.cloudinary.com/dkympkwdz/image/upload/v1496615020/books_ksx4bu.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.block {
+  background-color: rgba(255, 255, 255, 0.62);
+}
