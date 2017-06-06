@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Root from './core/root';
+import Root from './components/root';
 declare var window;
 
 document.addEventListener('DOMContentLoaded', () => {

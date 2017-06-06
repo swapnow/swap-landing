@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'reset';
+
+ .hidden {
+   display: none;
+ }
+
+.background {
+  position: fixed;
+  filter: blur(10%);
+  opacity: 0.5;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(http://res.cloudinary.com/dkympkwdz/image/upload/v1496615020/books_ksx4bu.jpg);
+  background-repeat: no-repeat;
+  // background-size: 100% auto;
+}
