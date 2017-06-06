@@ -83,6 +83,7 @@ h3 {
     background: #FF5454;
     color: white;
     padding: 5px;
+    opacity: 0.8;
   }
 
   input {
@@ -90,7 +91,7 @@ h3 {
     width: 100%;
     padding: 5px 15px;
     border-radius: 2px;
-    margin: 5px 2px;
+    margin: 2px 2px;
   }
 
   input[type="text"] { 
@@ -98,10 +99,6 @@ h3 {
     text-align: left;
     border: 1px solid #e2e2e2;
     background: #fff;
-
-    &:hover, &:focus {
-      box-shadow: 1px 1px 4px #ccc;
-    }
   }
 
   input[type="submit"] {
@@ -110,10 +107,21 @@ h3 {
     color: #fff;
     text-align: center;
     cursor: pointer;
+  }
+}
 
-    &:hover, &:focus {
-      box-shadow: 1px 1px 4px lightseagreen;
-    }
+@media screen and (min-width: 700px) {
+  #email-input-form {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #email-input-form {
+    flex-direction: column;
+
+
   }
 }
 
