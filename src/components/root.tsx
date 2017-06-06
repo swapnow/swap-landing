@@ -25,7 +25,7 @@ const Root: React.SFC<{}> = () => {
         Winner will be randomly selected and notified from email pool.
         <br />
         <br />
-        Your e-mail address will solely be used to provide timely information about SwapNow
+        Your e-mail address will solely be used to provide timely information about Swap
       </p>
 
       <div className="background"></div>

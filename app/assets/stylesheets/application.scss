@@ -88,13 +88,13 @@ h3 {
   input {
     height: 40px;
     width: 100%;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 2px;
     margin: 5px 2px;
   }
 
   input[type="text"] { 
-    flex: 2;
+    flex: 3;
     text-align: left;
     border: 1px solid #e2e2e2;
     background: #fff;  

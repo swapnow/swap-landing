@@ -68,7 +68,7 @@ class EmailForm extends React.Component<{}, State> {
           <input
             id='email'
             type="text"
-            placeholder="Your Berkeley Edu Email"
+            placeholder="Your Berkeley email"
             className={this.state.showError ? 'redish' : '' }
             onChange={this.update}
           />
