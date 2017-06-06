@@ -1,5 +1,6 @@
 import * as React from 'react';
 import EmailForm from './email_form';
+import Timer from './timer';
 
 const Root: React.SFC<{}> = () => {
   return (
@@ -12,7 +13,7 @@ const Root: React.SFC<{}> = () => {
         Find housing, furniture, textbooks, and more.
       </h3>
 
-      {/*<Timer />*/}
+      <Timer />
 
       <EmailForm />
 
