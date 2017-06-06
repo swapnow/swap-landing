@@ -64,19 +64,19 @@ class Timer extends React.Component<Props, State> {
 
     return (
       <div id="clockdiv">
-        <div>
+        <div className='clock-element'>
           <span className="days">{days}</span>
           <div className="smalltext">Days</div>
         </div>
-        <div>
+        <div className='clock-element'>
           <span className="hours">{hours}</span>
           <div className="smalltext">Hours</div>
         </div>
-        <div>
+        <div className='clock-element'>
           <span className="minutes">{minutes}</span>
           <div className="smalltext">Minutes</div>
         </div>
-        <div>
+        <div className='clock-element'>
           <span className="seconds">{seconds}</span>
           <div className="smalltext">Seconds</div>
         </div>
