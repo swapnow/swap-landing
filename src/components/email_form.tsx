@@ -1,20 +1,20 @@
 import React from 'react';
 import autoBind from 'react-autobind';
 
-interface Props {}
-
 interface State {
   email: string;
   showError: boolean;
+  renderSuccessMessage: boolean;
 }
 
-class EmailForm extends React.Component<Props, State> {
+class EmailForm extends React.Component<{}, State> {
   constructor(props) {
     super(props);
 
     this.state = {
       email: '',
-      showError: false
+      showError: false,
+      renderSuccessMessage: false
     };
 
     autoBind(this);
@@ -22,9 +22,21 @@ class EmailForm extends React.Component<Props, State> {
 
   private sendEmail(e) {
     e.preventDefault();
+    let { email } = this.state;
 
-    if (this.isEmailAddress(this.state.email)) {
-      // send email
+    if (this.isEmailAddress(email)) {
+      $.ajax({
+        method: "POST",
+        url: "/api/emails",
+        data: { email }
+      }).then(
+        () => {
+          this.setState({ 
+            showError: false,
+            renderSuccessMessage: true
+          });
+        }
+      )
     } else {
       this.setState({ showError: true });
     }
@@ -36,21 +48,28 @@ class EmailForm extends React.Component<Props, State> {
   }
 
   private update(e) {
-    this.setState({ email: e.target.value });
+    this.setState({ email: e.target.value, showError: false });
   }
 
-  render() {
-    return (
-      <form id="email-input-form" onSubmit={this.sendEmail}>
-
+  private renderType() {
+    if (this.state.renderSuccessMessage) {
+      return (
+        <div className='form-success'>
+          Thank you. We will shoot you an email once we are live.
+        </div> 
+      )
+    } else {
+      return (
+        <form id="email-input-form" onSubmit={this.sendEmail}>
           <div id='error' className={this.state.showError ? '' : 'hidden'}>
-            Please enter a valid .edu email.
+            Please enter a valid .edu email
           </div>
 
           <input
             id='email'
             type="text"
             placeholder="Your Berkeley Edu Email"
+            className={this.state.showError ? 'redish' : '' }
             onChange={this.update}
           />
 
@@ -58,7 +77,16 @@ class EmailForm extends React.Component<Props, State> {
             type="submit"
             value="Sign Me Up!"
           />
-      </form>
+        </form>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        { this.renderType() }
+      </div>
     );
   }
 }

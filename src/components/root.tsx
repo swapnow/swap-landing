@@ -18,8 +18,12 @@ const Root: React.SFC<{}> = () => {
 
 
       <p>
-        *Get a chance to win a $25 Amazon gift card!
+        <strong>*Get a chance to win a $25 Amazon gift card!</strong>
+        <br />
+        <br />
         Winner will be randomly selected and notified from email pool.
+        <br />
+        <br />
         Your e-mail address will solely be used to provide timely information about SwapNow
       </p>
 

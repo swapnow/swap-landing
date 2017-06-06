@@ -65,11 +65,25 @@ h3 {
   font-weight: 300;
 }
 
+.redish {
+  outline: 1px solid #FF5454;
+}
+
 #email-input-form {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
+  position: relative;
+
+  div {
+    position: absolute;
+    top: 50px;
+    left: 20%;
+    background: #FF5454;
+    color: white;
+    padding: 5px;
+  }
 
   input {
     height: 40px;
@@ -92,6 +106,25 @@ h3 {
     color: #fff;
     text-align: center;
   }
+}
 
+.form-success {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  height: 40px;
+  background: lightseagreen;
+  color: white;
+  line-height: 40px;
+}
 
+p {
+  font-size: 15px;
+  color: #444;
+  text-align: center;
+
+  strong {
+    font-weight: bold;
+    font-size: 18px;
+  }
 }
