@@ -5,6 +5,7 @@ interface Props {}
 
 interface State {
   email: string;
+  showError: boolean;
 }
 
 class EmailForm extends React.Component<Props, State> {
@@ -12,7 +13,8 @@ class EmailForm extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      email: ''
+      email: '',
+      showError: false
     };
 
     autoBind(this);
@@ -24,8 +26,7 @@ class EmailForm extends React.Component<Props, State> {
     if (this.isEmailAddress(this.state.email)) {
       // send email
     } else {
-      
-      
+      this.setState({ showError: true });
     }
   }
 
@@ -41,27 +42,22 @@ class EmailForm extends React.Component<Props, State> {
   render() {
     return (
       <form id="email-input-form" onSubmit={this.sendEmail}>
-        <div id='email-input' className="form-group input-group">
-          <div id='error' className='hidden'>
+
+          <div id='error' className={this.state.showError ? '' : 'hidden'}>
             Please enter a valid .edu email.
           </div>
-          
+
           <input
             id='email'
-            type="email"
+            type="text"
             placeholder="Your Berkeley Edu Email"
             onChange={this.update}
           />
 
-          <button
-            onClick={this.sendEmail}
-            type="button"
-            className=""
-          >
-            Remind me when SwapNow goes live!*
-          </button>
-         
-        </div>
+          <input
+            type="submit"
+            value="Sign Me Up!"
+          />
       </form>
     );
   }

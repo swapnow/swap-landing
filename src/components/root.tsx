@@ -3,11 +3,12 @@ import EmailForm from './email_form';
 
 const Root: React.SFC<{}> = () => {
   return (
-    <div>
+    <div className='main'>
       <h1>Swap</h1>
 
       <h3>
         The best marketplace exclusively for Berkeley students.
+        <br />
         Find housing, furniture, textbooks, and more.
       </h3>
 
