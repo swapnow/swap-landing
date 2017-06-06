@@ -84,7 +84,7 @@ class EmailForm extends React.Component<{}, State> {
 
   render() {
     return (
-      <div>
+      <div className='form-div'>
         { this.renderType() }
       </div>
     );

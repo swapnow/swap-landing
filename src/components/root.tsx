@@ -17,7 +17,6 @@ const Root: React.SFC<{}> = () => {
 
       <EmailForm />
 
-
       <p>
         <strong>*Get a chance to win a $25 Amazon gift card!</strong>
         <br />
