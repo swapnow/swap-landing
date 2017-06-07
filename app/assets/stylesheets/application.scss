@@ -72,9 +72,16 @@ h3 {
 }
 
 #email-input-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   position: relative;
 
@@ -97,14 +104,18 @@ h3 {
   }
 
   input[type="text"] { 
-    flex: 3;
+    -webkit-box-flex: 3; 
+        -ms-flex: 3; 
+            flex: 3;
     text-align: left;
     border: 1px solid #e2e2e2;
     background: #fff;
   }
 
   input[type="submit"] {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     background: lightseagreen;
     color: #fff;
     text-align: center;
@@ -121,7 +132,10 @@ h3 {
 
 @media screen and (max-width: 400px) {
   #email-input-form {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -148,29 +162,53 @@ p {
 
 #clockdiv {
   height: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
   .clock-element {
     height: 100%;
     width: 65px;
     margin: 0 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 
     span {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex: 3;
+      -webkit-box-flex: 3;
+          -ms-flex: 3;
+              flex: 3;
       font-size: 35px;
       text-align: center;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
     }
 
     div {
-      flex: 1;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
     }
   }
 }
