@@ -192,6 +192,7 @@ p {
         justify-content: space-around;
 
     span {
+      height: 50px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -233,8 +234,7 @@ p {
     margin: 20px 0 !important;
 
     div {
-      height: 100px !important;
-
+      // height: 100px !important;
       span {
         font-size: 25px !important;
       }
