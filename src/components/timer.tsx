@@ -29,7 +29,7 @@ class Timer extends React.Component<Props, State> {
   }
 
   private initializeClock() {
-    let deadline = Date.parse("July 1, 2017");
+    let deadline = Date.parse("July 15, 2017");
     let current = Date.now();
 
     let total = deadline - current;
